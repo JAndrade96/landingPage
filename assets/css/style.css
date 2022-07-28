@@ -1,5 +1,19 @@
 /* BEM */
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Open+Sans:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap');
+
+:root{
+    --soft-red: hsl(7, 99%, 70%);
+    --yellow: hsl(51, 100%, 49%);
+    --dark-desaturated: hsl(167, 40%, 24%);
+    --dark-blue: hsl(198, 62%, 26%);
+    --dark-moderate: hsl(168, 34%, 41%);
+
+    --very-dark-desaturated-blue: hsl(212, 27%, 19%);
+    --very-dark-grayish-blue: hsl(213, 9%, 39%);
+    --dark-grayish-blue: hsl(232, 10%, 55%);
+    --grayish-blue: hsl(210, 4%, 67%);
+    --white: hsl(0, 0%, 100%);
+}
 
 *{
     margin: 0;
@@ -32,40 +46,38 @@ body{
     align-items: center;
 }
 
-.inpu-menu{
+.input-menu{
     display: none;
 }
 
 .nav--menu{
     list-style: none;
     position: absolute;
-    background-color: white;
+    background-color: var(--white);
     width: calc(100% - 3rem);
     /*right: 1.5rem;*/
     top: 105px;
     padding: 1rem;
     text-align: center;
-    display: none;
-    left: 100%;
+    left: -100%;
     opacity: 0;
-    transition: all 1s linear;
+    transition: all .5s linear;
     z-index: 30;
 }
 
 .nav--menu::after{
     content: " ";
     display: block;
-    /*background-color: yellow;*/
     border-top: 15px solid transparent;
-    border-right: 15px solid white;
-    border-bottom: 15px solid white;
+    border-right: 15px solid var(--white);
+    border-bottom: 15px solid var(--white);
     border-left: 15px solid transparent;
     position: absolute;
     right: 0;
     top: -30px;
 }
 
-.inpu-menu:checked ~ .nav--menu{
+.input-menu:checked ~ .nav--menu{
     left: 1.5rem;
     opacity: 1;
 
@@ -73,7 +85,7 @@ body{
 
 .header--presentacion{
     padding: 2rem 1.5rem;
-    color: white;
+    color: var(--white);
     text-align: center;
 }
 
@@ -82,6 +94,7 @@ body{
     letter-spacing: .5rem;
     text-transform: uppercase;
     margin-bottom: 2rem;
+    line-height: 2.75rem;
 }
 
 .header--arrow{
@@ -128,6 +141,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    color: var(--very-dark-grayish-blue);
 }
 .section--title{
     font-family: "Fraunces" serif;
@@ -147,7 +161,7 @@ body{
 .section--link::after{
     content: "";
     display: block;
-    background-color: yellow;
+    background-color: var(--yellow);
     height: 10px;
     width: 140px;
     border-radius: 10px;
@@ -155,7 +169,7 @@ body{
 }
 
 .section--link__pink::after{
-    background-color: red;
+    background-color: var(--soft-red);
 }
 
 .section-services{
@@ -238,8 +252,8 @@ color: darkblue;
     .input-label{
         display: none;
     }
-    .nav--nav--item{
-        color: white;
+    .nav--nav-item{
+        color: var(--white);
         padding: 1.5rem;
     }
 }
